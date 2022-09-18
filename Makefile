@@ -5,10 +5,10 @@ OBJ := objects
 SRC := src
 
 # Main raylib path
-RAYLIB_PATH := C:/raylib/src
+RAYLIB_PATH := # Place your raylib src path here. (C:/raylib/src)
 
-INCLUDE := $(RAYLIB_PATH)
-LIB := $(RAYLIB_PATH)
+INCLUDE := include/  # $(RAYLIB_PATH)
+LIB := libraries/  # $(RAYLIB_PATH)
 LINKERS := -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
 
 all: main terminal
