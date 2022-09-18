@@ -15,4 +15,8 @@ The raylib header and shared library files have already been included in this pr
 
 ## Screen shots
 ### Terminal version
-![terminal](https://github.com/BrickSigma/Tic-Tac-Toe/blob/main/images/terminal.png?raw=true)
+![terminal](https://github.com/BrickSigma/Tic-Tac-Toe-Minimax/blob/main/images/terminal.png?raw=true)  
+  
+### GUI version
+![home screen](https://github.com/BrickSigma/Tic-Tac-Toe-Minimax/blob/main/images/home_screen.png?raw=true)  
+![game screen](https://github.com/BrickSigma/Tic-Tac-Toe-Minimax/blob/main/images/game_screen.png?raw=true) 
