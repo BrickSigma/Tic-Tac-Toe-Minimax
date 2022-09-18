@@ -11,6 +11,8 @@ INCLUDE := $(RAYLIB_PATH)
 LIB := $(RAYLIB_PATH)
 LINKERS := -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
 
+all: main terminal
+
 main : $(OBJ)/main.o $(OBJ)/functions.o
 	$(CC) $^ -o $@ $(CFLAGS) -L$(LIB) $(LINKERS)
 

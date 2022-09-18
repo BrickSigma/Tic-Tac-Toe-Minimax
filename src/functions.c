@@ -120,13 +120,16 @@ int checkWinner(char player, char grid[9])
  * 
  * @param grid 
  * @param player 
- * @param emptySpaces 
+ * @param emptySpaces
+ * @returns 0
  */
-void normalAI(char grid[9], char player, int emptySpaces)
+int normalAI(char grid[9], char player, int emptySpaces)
 {
 	int indexes[9];
 	getEmptySpaces(grid, indexes);
 	grid[indexes[random(emptySpaces)]] = player;
+
+    return 0;
 }
 
 /**

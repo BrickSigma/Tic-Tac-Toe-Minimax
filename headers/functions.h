@@ -29,7 +29,7 @@ typedef enum _compare{
     min = -1,
 } compare;
 
-void normalAI(char grid[9], char player, int emptySpaces);
+int normalAI(char grid[9], char player, int emptySpaces);
 int minimax(char grid[9], int emptySpaces, char player, compare cmp);
 int impossibleAI(char grid[9], char player, int emptySpaces);
 
