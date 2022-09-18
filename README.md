@@ -13,6 +13,10 @@
 ## Note
 The raylib header and shared library files have already been included in this project, but of you want to use your own build of raylib just change the `INCLUDE` and `LIB` path in the `Makefile`.  
 
+## References
+- [Geeks For Geeks](https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/)  
+- [MatthewSteel/ttc.c](https://gist.github.com/MatthewSteel/3158579)
+
 ## Screen shots
 ### Terminal version
 ![terminal](https://github.com/BrickSigma/Tic-Tac-Toe-Minimax/blob/main/images/terminal.png?raw=true)  
