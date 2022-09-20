@@ -5,7 +5,7 @@
 
 #include "../headers/functions.h"
 
-int main()
+int main(void)
 {
 	char grid[9];
 	clearGrid(grid);
@@ -36,25 +36,33 @@ int main()
 	printf("  1. Two player,\n  2. Single player (vs AI)\n  3. Exit\n");
 
 	printf("Enter 1, 2, or 3: ");
-	inputc(option);
+	option = inputc();
+	if (option == 0) {
+		exit(1);
+	};
 	if (option == '2') {
 		printf("\nSelect a difficulty:\n");
 		printf("  1. Normal,\n  2. Impossible\n");
 		printf("Enter 1 or 2: ");
 		DIFFICULTY:
-		inputc(option);
+		option = inputc();
+		if (option == 0) {
+			exit(1);
+		};
 		if (option != '1' && option != '2') {
 			printf("Select between option 1 or 2: ");
 			goto DIFFICULTY;
 		}
 		mode = option;
-		time_t t;
-		srand((unsigned)time(&t));
+		srand(time(0));
 		printf("\nDo you want to play 1st or 2nd:\n");
 		printf("  1. X,\n  2. O,\n  3. Random\n");
 		printf("Enter 1, 2, or 3: ");
 		PLAYERSELECT:
-		inputc(option);
+		option = inputc();
+		if (option == 0) {
+			exit(1);
+		};
 		switch (option) {
 			case '1':
 				human = 'X';
@@ -88,7 +96,9 @@ int main()
 			gridOut(grid);
 			printf("Player %c's turn\n", playerTurn);
 			printf("Enter a coordinate: ");
-			input(coordinate, 3);
+			if (input(coordinate, 3) == NULL) {
+				exit(1);
+			};
 			error = placeToken(playerTurn, grid, coordinate);
 		} else {
 			printf("AI's turn...\n");
@@ -122,7 +132,10 @@ int main()
 		if (gameOver) {
 			RETRY:
 			printf("Would you like to play again? [Y/N]: ");
-			inputc(replay);
+			replay = inputc();
+			if (replay == 0) {
+				exit(1);
+			};
 			if (toupper(replay) == 'N') {
 				printf("Exiting...");
 				break;

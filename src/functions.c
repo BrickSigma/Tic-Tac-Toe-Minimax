@@ -5,17 +5,20 @@
  * 
  * @param buffer 
  * @param n size of buffer
+ * @return The inputted text. Return NULL on failiure and exits
  */
-void input(char *buffer, size_t n)
+char *input(char *buffer, size_t n)
 {
-    fgets(buffer, n, stdin);
+    if (fgets(buffer, n, stdin) == NULL) {
+        return NULL;
+    };
     size_t nl = strlen(buffer)-1;
     if (buffer[nl] == '\n') {
         buffer[nl] = '\0';
     } else {
-        char c;
         while (1)
         {
+            char c;
             c = getchar();
             if (c == '\n')
             {
@@ -23,7 +26,32 @@ void input(char *buffer, size_t n)
             }
         }
     }
-    return;
+    return buffer;
+}
+
+/**
+ * @brief Get a single character from stdin (excluding '\n')
+ * 
+ * @return The read character. If it fails, 0 will be returned
+ */
+char inputc()
+{
+    char ch = getchar();
+    if (feof(stdin) != 0) {
+        return 0;
+    };
+    if (ch != '\n') {
+        while (1)
+        {
+            char c;
+            c = getchar();
+            if (c == '\n')
+            {
+                break;
+            }
+        }
+    }
+    return ch;
 }
 
 // Output the current state of the grid

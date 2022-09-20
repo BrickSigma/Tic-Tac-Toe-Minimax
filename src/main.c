@@ -20,6 +20,7 @@ int main(void)
 	// Value of X represents player 1's turn, value of O represents player 2's turn
 	char playerTurn = 'X';
 	char human = 'X';
+	srand(time(0));
 
 	// Used when determining who won for the output
 	char winner = 0;

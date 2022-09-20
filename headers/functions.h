@@ -7,12 +7,10 @@
 #include <stdlib.h>
 
 // Generate random numbers between 0 to n-1 inclusive
-#define random(n) rand()%n
+#define random(n) (rand()%(n))
 
-void input(char *buffer, size_t n);
-
-// Input macro for characters
-#define inputc(ch) input(&ch, 2)
+char *input(char *buffer, size_t n);
+char inputc();
 
 // Clear the grid for a new game
 #define clearGrid(grid) memset(grid, ' ', 9)
